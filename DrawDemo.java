@@ -62,6 +62,20 @@ public class DrawDemo
     }
     
     /**
+     * Dibuja un pentagono en pantalla
+     * 
+     * @param posX Posicion horizontal del pincel
+     * @param posY Posicion vertical del pincel
+     * @param lados Numero de lados del poligono
+     */
+    public void drawPolygon(int posX, int posY, int lados){
+        Pen pen = new Pen(posX, posY, myCanvas);
+        pen.setColor(Color.ORANGE);
+
+        polygon(pen, lados);
+    }
+    
+    /**
      * Draw a wheel made of many squares.
      */
     public void drawWheel()
@@ -106,6 +120,16 @@ public class DrawDemo
         }
     }
 
+    /**
+     * Dibuja un poligono en pantalla en la posicion del Pen
+     */
+    private void polygon(Pen pen, int lados){
+        for (int i=0; i<lados; i++) {
+            pen.move(100);
+            pen.turn(360/lados);
+        }
+    }
+    
     /**
      * Draw some random squiggles on the screen, in random colors.
      */
