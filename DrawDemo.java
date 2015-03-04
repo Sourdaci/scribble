@@ -37,12 +37,28 @@ public class DrawDemo
 
     /**
      * Dibuja un triangulo en pantalla
+     * 
+     * @param posX Posicion horizontal del pincel
+     * @param posY Posicion vertical del pincel
      */
     public void drawTriangle(int posX, int posY){
         Pen pen = new Pen(posX, posY, myCanvas);
         pen.setColor(Color.GREEN);
 
         triangle(pen);
+    }
+    
+    /**
+     * Dibuja un pentagono en pantalla
+     * 
+     * @param posX Posicion horizontal del pincel
+     * @param posY Posicion vertical del pincel
+     */
+    public void drawPentagon(int posX, int posY){
+        Pen pen = new Pen(posX, posY, myCanvas);
+        pen.setColor(Color.GREEN);
+
+        pentagon(pen);
     }
     
     /**
@@ -77,6 +93,16 @@ public class DrawDemo
         for (int i=0; i<3; i++) {
             pen.move(100);
             pen.turn(120);
+        }
+    }
+    
+    /**
+     * Dibuja un pentagono en pantalla en la posicion del Pen
+     */
+    private void pentagon(Pen pen){
+        for (int i=0; i<5; i++) {
+            pen.move(100);
+            pen.turn(72);
         }
     }
 
