@@ -62,6 +62,16 @@ public class DrawDemo
     }
     
     /**
+     * Dibuja una espiral en pantalla
+     */
+    public void drawSpiral(){
+        Pen pen = new Pen(250, 200, myCanvas);
+        pen.setColor(Color.BLACK);
+
+        spiral(pen);
+    }
+    
+    /**
      * Dibuja un pentagono en pantalla
      * 
      * @param posX Posicion horizontal del pincel
@@ -127,6 +137,18 @@ public class DrawDemo
         for (int i=0; i<lados; i++) {
             pen.move(100);
             pen.turn(360/lados);
+        }
+    }
+    
+    /**
+     * Dibuja una espiral en pantalla en la posicion del Pen
+     */
+    private void spiral(Pen pen){
+        int movimiento = 1;
+        for (int i=0; i<64; i++) {
+            pen.move(movimiento);
+            movimiento += 2;
+            pen.turn(90);
         }
     }
     
